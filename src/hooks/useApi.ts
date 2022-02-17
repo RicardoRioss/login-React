@@ -6,6 +6,12 @@ const api = axios.create({
 
 export const useApi = () => ({
   validateToken: async (token: string) => {
+    //resposta falsa
+    return { 
+      user: { id: 3, name: 'John', email: 'john@fake.com'}
+    }
+
+
     const response = await api.post('/validate', { token });
     return response.data
   },
@@ -19,6 +25,8 @@ export const useApi = () => ({
     return response.data
     },
   logout: async () => {
+    //retorno status fake
+    return { status: true }
     const response = await api.post('/logout');
     return response.data
   }
