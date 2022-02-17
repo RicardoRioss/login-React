@@ -34,9 +34,9 @@ export const AuthProvider = ({ children }: { children: JSX.Element}) => {
 
   //função de logout
   const signout = async () => {
-    await api.logout()
     setUser(null)
     setToken('')
+    await api.logout()
   }
 
   //salvar token no localstorege
